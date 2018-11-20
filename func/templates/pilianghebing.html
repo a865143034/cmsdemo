@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择页面</title>
+</head>
+<body>
+<form action="6" method="post">
+    {% csrf_token %}
+    {% for item in id %}
+        <input type="checkbox" checked="checked" style="display:none" value="{{ item }}" name="id"/>
+    {% endfor %}
+
+    <select name="name">
+        {% for i in name %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="intro">
+        {% for i in intro %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="phone">
+        {% for i in phone %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="email">
+        {% for i in email %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="wechat">
+        {% for i in wechat %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="linkedin">
+        {% for i in linkedin %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <select name="address">
+        {% for i in address %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

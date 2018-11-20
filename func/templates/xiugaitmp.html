@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in data %}
+    {{ i }}
+            <form action="3" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{ i.0 }}">
+                <input type="hidden" name="name" value="{{ i.1 }}">
+                <input type="hidden" name="intro" value="{{ i.3 }}">
+                <input type="hidden" name="phone" value="{{ i.4 }}">
+                <input type="hidden" name="email" value="{{ i.5 }}">
+                <input type="hidden" name="wechat" value="{{ i.6 }}">
+                <input type="hidden" name="linkedin" value="{{ i.7 }}">
+                <input type="hidden" name="address" value="{{ i.8 }}">
+                <input type="submit" value="编辑" class="edit"/>
+            </form>
+{% endfor %}
+</body>
+</html>

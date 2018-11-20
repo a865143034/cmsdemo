@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+</head>
+<body>
+{% for key,value in data.items %}
+    {% for j in value %}
+        <div>
+            <label><input type="checkbox" name="item" value="{{ j.0 }}"/>{{ j }}</label>
+            <form action="4" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{ j.0 }}">
+                <input type="submit" value="编辑" class="edit"/>
+            </form>
+        </div>
+    {% endfor %}<br>
+{% endfor %}
+
+<form class="mixform" action="5" method="POST">
+    {% csrf_token %}
+<button class="mix">合并</button>
+
+</form>
+<form action="3" method="POST">
+    {% csrf_token %}
+    {% for item in les %}
+        <input type="checkbox" value="{{ item }}" name="check_box_list"/>{{ item }}
+    {% endfor %}
+<input type="submit" value="一键添加"/>
+</form>
+
+<script>
+    $(function(){
+        $('.mix').on('click',function(){
+            $('.mixform [name=ids]').remove()
+            $('[name=item]:checked').each(function(){
+                $('.mixform').append('<input type="checkbox" name="ids" checked="checked" value="' + $(this).val()+ '" style="display:none;"/>')
+            })
+            $('.mixform')[0].submit();
+        })
+    })
+</script>
+</body>
+
+
+</html>
+
+

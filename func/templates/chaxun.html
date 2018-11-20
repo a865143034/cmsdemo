@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chaxun</title>
+</head>
+<body>
+
+<form action="ans" method="post">
+    {% csrf_token %}
+    需要查询的姓名 : <input type="text" name="uname">
+    <input type="submit">
+</form>
+
+</body>
+</html>

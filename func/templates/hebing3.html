@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择页面</title>
+</head>
+<body>
+各特征选择的用户id:
+<form action="4" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="id1" value="{{ id1 }}">
+    <input type="hidden" name="id2" value="{{ id2 }}">
+    <select name="name">
+        <option value="{{ name1 }}">{{ name1 }}</option>
+        <option value="{{ name2 }}">{{ name2 }}</option>
+    </select>
+    <select name="intro">
+        <option value="{{ intro1 }}">{{ intro1 }}</option>
+        <option value="{{ intro2 }}">{{ intro2 }}</option>
+    </select>
+    <select name="phone">
+        <option value="{{ phone1 }}">{{ phone1 }}</option>
+        <option value="{{ phone2 }}">{{ phone2 }}</option>
+    </select>
+    <select name="email">
+        <option value="{{ email1 }}">{{ email1 }}</option>
+        <option value="{{ email2 }}">{{ email2 }}</option>
+    </select>
+    <select name="wechat">
+        <option value="{{ wechat1 }}">{{ wechat1 }}</option>
+        <option value="{{ wechat2 }}">{{ wechat2 }}</option>
+    </select>
+    <select name="linkedin">
+        <option value="{{ linkedin1 }}">{{ linkedin1 }}</option>
+        <option value="{{ linkedin2 }}">{{ linkedin2 }}</option>
+    </select>
+    <select name="address">
+        <option value="{{ address1 }}">{{ address1 }}</option>
+        <option value="{{ address2 }}">{{ address2 }}</option>
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>
